@@ -118,7 +118,7 @@ class ParseSchemaTest extends \PHPUnit_Framework_TestCase
         $result = $getSchema->get();
 
         if (isset($result['fields']['name'])) {
-            $this->fail("Field not deleted in update action");
+            $this->fail('Field not deleted in update action');
         }
         $this->assertNotNull($result['fields']['quantity']);
         $this->assertNotNull($result['fields']['status']);

@@ -271,7 +271,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$STRING,
+            'type' => self::$STRING,
         ];
 
         return $this;
@@ -293,7 +293,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$NUMBER,
+            'type' => self::$NUMBER,
         ];
 
         return $this;
@@ -315,7 +315,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$BOOLEAN,
+            'type' => self::$BOOLEAN,
         ];
 
         return $this;
@@ -337,7 +337,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$DATE,
+            'type' => self::$DATE,
         ];
 
         return $this;
@@ -359,7 +359,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$FILE,
+            'type' => self::$FILE,
         ];
 
         return $this;
@@ -381,7 +381,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$GEO_POINT,
+            'type' => self::$GEO_POINT,
         ];
 
         return $this;
@@ -403,7 +403,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$ARRAY,
+            'type' => self::$ARRAY,
         ];
 
         return $this;
@@ -425,7 +425,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type' => ParseSchema::$OBJECT,
+            'type' => self::$OBJECT,
         ];
 
         return $this;
@@ -452,7 +452,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type'        => ParseSchema::$POINTER,
+            'type'        => self::$POINTER,
             'targetClass' => $targetClass,
         ];
 
@@ -480,7 +480,7 @@ class ParseSchema
         }
 
         $this->fields[$fieldName] = [
-            'type'        => ParseSchema::$RELATION,
+            'type'        => self::$RELATION,
             'targetClass' => $targetClass,
         ];
 
@@ -524,16 +524,16 @@ class ParseSchema
      */
     public function assertTypes($type = null)
     {
-        if ($type !== ParseSchema::$STRING &&
-            $type !== ParseSchema::$NUMBER &&
-            $type !== ParseSchema::$BOOLEAN &&
-            $type !== ParseSchema::$DATE &&
-            $type !== ParseSchema::$FILE &&
-            $type !== ParseSchema::$GEO_POINT &&
-            $type !== ParseSchema::$ARRAY &&
-            $type !== ParseSchema::$OBJECT &&
-            $type !== ParseSchema::$POINTER &&
-            $type !== ParseSchema::$RELATION ) {
+        if ($type !== self::$STRING &&
+            $type !== self::$NUMBER &&
+            $type !== self::$BOOLEAN &&
+            $type !== self::$DATE &&
+            $type !== self::$FILE &&
+            $type !== self::$GEO_POINT &&
+            $type !== self::$ARRAY &&
+            $type !== self::$OBJECT &&
+            $type !== self::$POINTER &&
+            $type !== self::$RELATION) {
             throw new InvalidArgumentException($type.' is not a valid type.', 1);
         }
     }
