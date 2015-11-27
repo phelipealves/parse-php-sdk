@@ -10,7 +10,7 @@ namespace Parse;
 class ParseHooks
 {
     /**
-     * Fetch the list of all cloud functions
+     * Fetch the list of all cloud functions.
      *
      * @throws ParseException
      *
@@ -39,7 +39,7 @@ class ParseHooks
     }
 
     /**
-     * Fetch a single cloud function with a given name
+     * Fetch a single cloud function with a given name.
      *
      * @param string $functionName
      *
@@ -70,10 +70,11 @@ class ParseHooks
     }
 
     /**
-     * Fetch the list of all cloud triggers
+     * Fetch the list of all cloud triggers.
+     *
+     * @throws ParseException
      *
      * @return array
-     * @throws ParseException
      */
     public function fetchTriggers()
     {
@@ -98,7 +99,7 @@ class ParseHooks
     }
 
     /**
-     * Fetch a single cloud trigger
+     * Fetch a single cloud trigger.
      *
      * @param $className
      * @param $triggerName
@@ -152,7 +153,7 @@ class ParseHooks
             $sessionToken,
             json_encode([
                 'functionName' => $functionName,
-                'url' => $url
+                'url'          => $url,
             ]),
             true
         );
@@ -181,9 +182,9 @@ class ParseHooks
             'hooks/triggers',
             $sessionToken,
             json_encode([
-                'className' => $className,
+                'className'   => $className,
                 'triggerName' => $triggerName,
-                'url' => $url
+                'url'         => $url,
             ]),
             true
         );
@@ -213,7 +214,7 @@ class ParseHooks
             'hooks/functions/'.$functionName,
             $sessionToken,
             json_encode([
-                'url' => $url
+                'url' => $url,
             ]),
             true
         );
@@ -222,7 +223,7 @@ class ParseHooks
     }
 
     /**
-     * Edit the url of a trigger webhook that was already crated
+     * Edit the url of a trigger webhook that was already crated.
      *
      * @param $className
      * @param $triggerName
@@ -242,7 +243,7 @@ class ParseHooks
             'hooks/triggers/'.$className.'/'.$triggerName,
             $sessionToken,
             json_encode([
-                'url' => $url
+                'url' => $url,
             ]),
             true
         );
@@ -251,7 +252,7 @@ class ParseHooks
     }
 
     /**
-     * Delete a function webhook
+     * Delete a function webhook.
      *
      * @param $functionName
      *
@@ -280,7 +281,7 @@ class ParseHooks
     }
 
     /**
-     * Delete a trigger webhook
+     * Delete a trigger webhook.
      *
      * @param $className
      * @param $triggerName
@@ -299,12 +300,11 @@ class ParseHooks
             'hooks/triggers/'.$className.'/'.$triggerName,
             $sessionToken,
             json_encode([
-                '__op' => 'Delete'
+                '__op' => 'Delete',
             ]),
             true
         );
 
         return $result;
     }
-
 }

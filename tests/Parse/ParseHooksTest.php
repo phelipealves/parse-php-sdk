@@ -80,9 +80,9 @@ class ParseHooksTest extends PHPUnit_Framework_TestCase
     {
         $trigger = self::$hooks->createTrigger('Game', 'beforeSave', 'https://api.example.com/Game/beforeSave');
         $this->assertEquals([
-            'className' => 'Game',
+            'className'   => 'Game',
             'triggerName' => 'beforeSave',
-            'url' => 'https://api.example.com/Game/beforeSave'
+            'url'         => 'https://api.example.com/Game/beforeSave',
         ], $trigger);
 
         self::$hooks->deleteTrigger('Game', 'beforeSave');
@@ -118,9 +118,9 @@ class ParseHooksTest extends PHPUnit_Framework_TestCase
 
         $edited_trigger = self::$hooks->editTrigger('Game', 'beforeSave', 'https://api.example.com/Game/_beforeSave');
         $this->assertEquals([
-            'className' => 'Game',
+            'className'   => 'Game',
             'triggerName' => 'beforeSave',
-            'url' => 'https://api.example.com/Game/_beforeSave'
+            'url'         => 'https://api.example.com/Game/_beforeSave',
         ], $edited_trigger);
 
         self::$hooks->deleteTrigger('Game', 'beforeSave');
@@ -141,5 +141,4 @@ class ParseHooksTest extends PHPUnit_Framework_TestCase
         $deleted_trigger = self::$hooks->deleteTrigger('Game', 'beforeSave');
         $this->assertEmpty($deleted_trigger);
     }
-
 }
