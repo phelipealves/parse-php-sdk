@@ -15,9 +15,9 @@ class Helper
         date_default_timezone_set('UTC');
 
         ParseClient::initialize(
-            'app-id-here',
-            'rest-api-key-here',
-            'master-key-here'
+            'HLBUVuVrfmQ1JFEOC4qu7ChTsI4OfEaa7wz2tbx1',
+            't3j3WunRpSLrD2hQrNHMOLoEBoPXQzuRVN6t1ToD',
+            'hDydAVManvhIOeHFi91FraU7aUV0X3ErGvswPDV9'
         );
     }
 
