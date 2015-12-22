@@ -17,7 +17,10 @@ class Helper
         ParseClient::initialize(
             'app-id-here',
             'rest-api-key-here',
-            'master-key-here'
+            'master-key-here',
+            true,
+            'account-email-here',
+            'account-password-here'
         );
     }
 
