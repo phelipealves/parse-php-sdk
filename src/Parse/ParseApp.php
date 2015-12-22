@@ -2,7 +2,6 @@
 
 namespace Parse;
 
-
 class ParseApp
 {
     public static $APP_NAME = 'appName';
@@ -77,7 +76,6 @@ class ParseApp
 
         return $result;
     }
-
 
     /**
      * You can change your app's name, as well as change your app's settings.

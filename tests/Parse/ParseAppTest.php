@@ -2,7 +2,6 @@
 
 namespace Parse\Test;
 
-
 use Parse\ParseApp;
 use PHPUnit_Framework_TestCase;
 
@@ -44,7 +43,7 @@ class ParseAppTest extends PHPUnit_Framework_TestCase
         $app_name = self::_getNewName();
 
         $app = ParseApp::createApp([
-            'appName' => $app_name
+            'appName' => $app_name,
         ]);
 
         $this->assertEquals($app_name, $app['appName']);
@@ -59,7 +58,7 @@ class ParseAppTest extends PHPUnit_Framework_TestCase
         $app_name = self::_getNewName();
 
         ParseApp::createApp([
-            'appName' => $app_name
+            'appName' => $app_name,
         ]);
 
         $this->setExpectedException('Parse\ParseException', 'App name must not already be used in your account');
@@ -83,7 +82,7 @@ class ParseAppTest extends PHPUnit_Framework_TestCase
             'clientClassCreationEnabled'    => false,
             'clientPushEnabled'             => true,
             'requireRevocableSessions'      => false,
-            'revokeSessionOnPasswordChange' => false
+            'revokeSessionOnPasswordChange' => false,
         ]);
 
         $this->assertEquals($updated_name, $updated_app['appName']);

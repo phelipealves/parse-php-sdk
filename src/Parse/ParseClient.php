@@ -281,6 +281,7 @@ final class ParseClient
      * @param null   $data         Data to provide with the request.
      * @param bool   $useMasterKey Whether to use the Master Key.
      * @param bool   $appRequest   App request to create or modify a application
+     *
      * @throws \Exception
      *
      * @return mixed Result from Parse API Call.
@@ -402,12 +403,11 @@ final class ParseClient
     }
 
     /**
-     *
      * @throws Exception
      */
     private static function assertAppInitialized()
     {
-        if (self::$account_email === null || self::$account_password === null ) {
+        if (self::$account_email === null || self::$account_password === null) {
             throw new Exception(
                 'You must call Parse::initialize(..., $email, $password) before making any requests.'
             );
@@ -451,13 +451,13 @@ final class ParseClient
     public static function _getAppRequestHeaders()
     {
         if (is_null(self::$account_email) || empty(self::$account_email)) {
-            throw new InvalidArgumentException("Email is required and can not be null or empty");
+            throw new InvalidArgumentException('Email is required and can not be null or empty');
         } else {
             $headers[] = 'X-Parse-Email: '.self::$account_email;
         }
 
         if (is_null(self::$account_password) || empty(self::$account_password)) {
-            throw new InvalidArgumentException("Password is required and can not be null or empty");
+            throw new InvalidArgumentException('Password is required and can not be null or empty');
         } else {
             $headers[] = 'X-Parse-Password: '.self::$account_password;
         }
